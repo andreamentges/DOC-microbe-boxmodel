@@ -82,7 +82,7 @@ if PE.nb == 7
         cx = [0 0 L(1) L(1)];
         cy = [H(1) 0 0 H(1)];
         
-    end
+end
 
 %% Plot development of all variables over time
 if any(strcmp(varargin, 'time'))

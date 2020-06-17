@@ -147,14 +147,14 @@ elseif PE.nb == 2
     end   
     
 else
-    Psi   = 0; % EDIT: Psi = 1./repmat(V',[1 PE.nb]);
-    Psi_o = 0; % EDIT: Psi = 1;
+    Psi   = 0; 
+    Psi_o = 0; 
 end
 
 %% surface properties
 
 if PE.nb == 7
-    T  = [-0.57 5.49 20.42 5.16 10.05 6.52 0.19];%[0 8 22 3]; % surface box temperature (degC)
+    T  = [-0.57 5.49 20.42 5.16 10.05 6.52 0.19]; % surface box temperature (degC)
 elseif PE.nb ==2
     T = [mean([-0.57; 5.49; 20.42; 5.16]) mean([10.05 6.52 0.19])];
 else

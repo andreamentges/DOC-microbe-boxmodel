@@ -1,5 +1,8 @@
 %% v2struct
 % v2struct Pack/Unpack Variables to/from a scalar structure.
+%
+% Please see "license_v2struct".
+%
 function varargout = v2struct(varargin)
 
 %% Description

@@ -8,7 +8,6 @@ Bloc = y(PE.Jbac)'; % Bacterial carbon biomass [mmol/m³]
 %% update basic quantities
 
 Psi   = PO.Psi_o; % [1/d]
-
 Svec_m = NaN(PE.nb,1);
 
 % Interpolate for current second between monthly values (smooth)
@@ -18,13 +17,13 @@ for b = 1:PE.nb
 end
 
 
-%% DOM ecosystem model - no temperature dependance [basic unit: mmolC/m³/d]
+%% DOM ecosystem model [basic unit: mmolC/m³/d]
 
 Beco = PD.eta.*PD.uf.*Bloc'.*Mloc' - PD.r_mort1.*Bloc';
 Meco = PD.beta.*(1-PD.eta).*PD.uf.*Mloc'.*Bloc' + PD.r_mort1.*Bloc' - PD.uf.*Mloc'.*Bloc';
 
 
-%% Compute Tendencies - should have units mmol/d - DOC produced at fixed S - Nov 2017
+%% Compute Tendencies
 
 dMdt = (Psi*Mloc' + Meco) + Svec_m; % DOC [mmol/m³]
 dBdt = Psi*Bloc' + Beco; % Bacteria [mmol/m³]
